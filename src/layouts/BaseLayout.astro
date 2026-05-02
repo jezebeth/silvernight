@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  publishedAt?: Date;
+  activeNav?: 'toc' | 'reader';
+}
+
+const { title, description, ogImage, type = 'website', publishedAt, activeNav = 'toc' } = Astro.props;
+
+const siteOrigin = import.meta.env.SITE ?? 'https://jezebeth.github.io';
+const base = import.meta.env.BASE_URL;
+const baseNormalized = base.replace(/\/$/, '');
+
+const canonical = new URL(Astro.url.pathname, siteOrigin).href;
+
+const ogImagePath = ogImage
+  ? `${baseNormalized}/${ogImage.replace(/^\//, '')}`
+  : `${baseNormalized}/og-default.png`;
+const ogImageAbsUrl = new URL(ogImagePath, siteOrigin).href;
+
+const siteUrl = `${siteOrigin}${baseNormalized}/`;
+
+const jsonLd = type === 'article'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      inLanguage: 'th',
+      ...(publishedAt && { datePublished: publishedAt.toISOString() }),
+      isPartOf: { '@type': 'Book', name: 'Silvernight', url: siteUrl },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Novel Atelier',
+      url: siteUrl,
+      inLanguage: 'th',
+    };
+
+---
+
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageAbsUrl} />
+    <meta property="og:locale" content="th_TH" />
+    <meta property="og:site_name" content="Novel Atelier" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <!-- Background layers -->
+    <div class="page-bg"></div>
+    <div class="page-overlay"></div>
+    <div class="page-overlay-2"></div>
+    <div class="page-overlay-3"></div>
+
+    <!-- Character overlays -->
+    <aside class="char-overlay char-overlay-left" aria-hidden="true">
+      <img src={`${base}images/silvernight/yuel-forest.png`} alt="" />
+      <div class="char-fade-right"></div>
+    </aside>
+    <aside class="char-overlay char-overlay-right" aria-hidden="true">
+      <div class="char-flip">
+        <img src={`${base}images/silvernight/night-forest.png`} alt="" />
+      </div>
+      <div class="char-fade-left"></div>
+    </aside>
+
+    <header class="topbar">
+      <a href={base} class="brand">
+        <span class="brand-leaf">❧</span>
+        Novel Atelier
+      </a>
+      <nav class="simple-nav">
+        <a href={base} class={activeNav === 'toc' ? 'nav-active' : ''}>สารบัญ</a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <span style="color: #8f887b">อ่านนิยาย</span>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Character artwork on this site is AI-generated and used solely as visual reference
+        for original fictional characters. All story content, characters, and narrative
+        are original works by the author. No claim of artistic ownership is made over the generated imagery.
+      </p>
+    </footer>
+  </body>
+</html>

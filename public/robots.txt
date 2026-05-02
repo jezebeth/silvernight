@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jezebeth.github.io/silvernight/sitemap-index.xml

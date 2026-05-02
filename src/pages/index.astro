@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allChapters = await getCollection('chapters');
+const chapters = allChapters
+  .sort((a, b) => a.data.chapter - b.data.chapter)
+  .map((entry) => ({
+    url: `${import.meta.env.BASE_URL}chapters/${entry.id}/`,
+    title: entry.data.title,
+    chapter: entry.data.chapter,
+    description: entry.data.description,
+  }));
+
+const firstChapter = chapters[0];
+---
+
+<BaseLayout
+  title="Silvernight - สารบัญ"
+  description="Silvernight นิยาย dark fantasy ภาษาไทย ติดตามการผจญภัยของไนท์และปริศนาของเอเธอริสผู้ขโมยฝัน"
+  activeNav="toc"
+>
+  <section class="reading-panel" style="max-width:860px">
+    <div class="panel-inner-glow" aria-hidden="true"></div>
+    <div class="panel-inner-border" aria-hidden="true"></div>
+
+    <header class="chapter-header">
+      <div class="thin-line"></div>
+      <div class="ornament">✦  ✧  ✦</div>
+      <h1>Silvernight</h1>
+      <div class="thin-line short"></div>
+
+      <div class="tags">
+        <span><span class="tag-icon">♟</span>Dark Fantasy</span>
+        <span><span class="tag-icon">◉</span>Mystery</span>
+        <span><span class="tag-icon">☄</span>Slow Burn</span>
+      </div>
+
+      <div class="ornament-divider">
+        <span class="ornament-line ornament-line-lg ornament-line-left"></span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-star-dim">✧</span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-line ornament-line-lg ornament-line-right"></span>
+      </div>
+      <h2>สารบัญตอน</h2>
+      <div class="ornament-divider" style="margin-top:8px;margin-bottom:0">
+        <span class="ornament-line ornament-line-sm ornament-line-left"></span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-star-dim">✧</span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-line ornament-line-sm ornament-line-right"></span>
+      </div>
+    </header>
+
+    <section class="toc-list">
+      {chapters.map((chapter) => (
+        <a class="toc-item" href={chapter.url}>
+          <div class="toc-item-row">
+            <div>
+              <p>Chapter {chapter.chapter}</p>
+              <h3>{chapter.title}</h3>
+            </div>
+            <span class="toc-read-hint">อ่านตอนนี้ ›</span>
+          </div>
+          {chapter.description && <span class="toc-desc">{chapter.description}</span>}
+        </a>
+      ))}
+    </section>
+
+    {firstChapter && (
+      <div class="toc-start">
+        <a class="btn-gold btn-gold-primary" href={firstChapter.url}>
+          เริ่มอ่านบทแรก
+        </a>
+      </div>
+    )}
+  </section>
+</BaseLayout>

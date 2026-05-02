@@ -1,0 +1,105 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const allChapters = await getCollection('chapters');
+  const sorted = allChapters.sort((a, b) => a.data.chapter - b.data.chapter);
+
+  return sorted.map((entry, index) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      prev: index > 0 ? sorted[index - 1] : null,
+      next: index < sorted.length - 1 ? sorted[index + 1] : null,
+    },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title={`Silvernight - ${entry.data.title}`}
+  description={entry.data.description ?? `Silvernight บทที่ ${entry.data.chapter}: ${entry.data.title}`}
+  ogImage={entry.data.illustration}
+  type="article"
+  publishedAt={entry.data.publishedAt}
+  activeNav="reader"
+>
+  <section class="reading-panel">
+    <div class="panel-inner-glow" aria-hidden="true"></div>
+    <div class="panel-inner-border" aria-hidden="true"></div>
+    <div class="panel-top-line" aria-hidden="true"></div>
+
+    <header class="chapter-header">
+      <div class="thin-line"></div>
+      <div class="ornament">✦  ✧  ✦</div>
+      <h1>Silvernight</h1>
+      <div class="thin-line short"></div>
+
+      <div class="tags">
+        <span><span class="tag-icon">♟</span>Dark Fantasy</span>
+        <span><span class="tag-icon">◉</span>Mystery</span>
+        <span><span class="tag-icon">☄</span>Slow Burn</span>
+      </div>
+
+      <div class="ornament-divider">
+        <span class="ornament-line ornament-line-sm ornament-line-left"></span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-star-dim">✧</span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-line ornament-line-sm ornament-line-right"></span>
+      </div>
+      <h2>{entry.data.title}</h2>
+      <div class="ornament-divider" style="margin-top:8px;margin-bottom:0">
+        <span class="ornament-line ornament-line-lg ornament-line-left"></span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-star-dim">✧</span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-line ornament-line-lg ornament-line-right"></span>
+      </div>
+    </header>
+
+    {entry.data.illustration && (
+      <figure class="chapter-image breathe">
+        <div class="chapter-image-inner">
+          <img src={entry.data.illustration} alt={entry.data.title} />
+          <div class="chapter-image-overlay" aria-hidden="true"></div>
+          <div class="corner-frame" aria-hidden="true">
+            <div class="corner-tl"></div>
+            <div class="corner-tr"></div>
+            <div class="corner-bl"></div>
+            <div class="corner-br"></div>
+            <div class="corner-tl-i"></div>
+            <div class="corner-tr-i"></div>
+            <div class="corner-bl-i"></div>
+            <div class="corner-br-i"></div>
+          </div>
+        </div>
+      </figure>
+    )}
+
+    <article class="chapter-content">
+      <Content />
+    </article>
+
+    <nav class="chapter-nav">
+      <div>
+        {prev && (
+          <a href={`${base}chapters/${prev.id}/`}>‹ {prev.data.title}</a>
+        )}
+      </div>
+      <div>
+        <a href={base}>≡ สารบัญตอน</a>
+      </div>
+      <div>
+        {next && (
+          <a href={`${base}chapters/${next.id}/`}>{next.data.title} ›</a>
+        )}
+      </div>
+    </nav>
+  </section>
+</BaseLayout>
