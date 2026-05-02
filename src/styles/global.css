@@ -51,7 +51,6 @@ a {
 .page-bg {
   position: fixed;
   inset: 0;
-  background-image: url("/images/silvernight/silvernight-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
