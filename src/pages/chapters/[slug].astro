@@ -89,7 +89,7 @@ const base = import.meta.env.BASE_URL;
     <nav class="chapter-nav">
       <div>
         {prev && (
-          <a href={`${base}chapters/${prev.id}/`}>‹ {prev.data.title}</a>
+          <a href={`${base}/chapters/${prev.id}/`}>‹ {prev.data.title}</a>
         )}
       </div>
       <div>
@@ -97,7 +97,7 @@ const base = import.meta.env.BASE_URL;
       </div>
       <div>
         {next && (
-          <a href={`${base}chapters/${next.id}/`}>{next.data.title} ›</a>
+          <a href={`${base}/chapters/${next.id}/`}>{next.data.title} ›</a>
         )}
       </div>
     </nav>
