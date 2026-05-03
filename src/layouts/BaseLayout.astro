@@ -103,6 +103,8 @@ const jsonLd = type === 'article'
       <slot />
     </main>
 
+    <button id="back-to-top" aria-label="กลับขึ้นบน">↑</button>
+
     <footer class="site-footer">
       <p>
         Character artwork on this site is AI-generated and used solely as visual reference
@@ -110,5 +112,14 @@ const jsonLd = type === 'article'
         are original works by the author. No claim of artistic ownership is made over the generated imagery.
       </p>
     </footer>
+  <script>
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn?.classList.toggle('visible', window.scrollY > 300);
+    });
+    btn?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
   </body>
 </html>
