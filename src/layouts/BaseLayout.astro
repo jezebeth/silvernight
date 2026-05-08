@@ -7,7 +7,7 @@ interface Props {
   ogImage?: string;
   type?: 'website' | 'article';
   publishedAt?: Date;
-  activeNav?: 'toc' | 'reader';
+  activeNav?: 'toc' | 'reader' | 'characters';
 }
 
 const { title, description, ogImage, type = 'website', publishedAt, activeNav = 'toc' } = Astro.props;
@@ -94,6 +94,8 @@ const jsonLd = type === 'article'
       </a>
       <nav class="simple-nav">
         <a href={base} class={activeNav === 'toc' ? 'nav-active' : ''}>สารบัญ</a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a href={`${base}/characters/`} class={activeNav === 'characters' ? 'nav-active' : ''}>ตัวละคร</a>
         <span class="nav-sep" aria-hidden="true"></span>
         <span style="color: #8f887b">อ่านนิยาย</span>
       </nav>
