@@ -4,6 +4,21 @@ chapter: 6
 publishedAt: 2026-05-14
 description: "แอสเทรียคือเมืองที่เคยมีลำธารสะท้อนแสงดาว แต่คืนนี้ท้องฟ้ากลับมืดสนิท"
 illustration: "/silvernight/images/silvernight/chapter-06-cover.png"
+aftertalk:
+  question: "ไนท์วิ่งเร็วกว่ายูเอลจริงไหม"
+  dialogue:
+    - icon: "🐺"
+      name: "ไนท์"
+      text: "ฉันวิ่งเร็วกว่า"
+    - icon: "🌙"
+      name: "ยูเอล"
+      text: "นายแค่หาเหตุผลแบกฉัน"
+    - icon: "🐺"
+      name: "ไนท์"
+      text: "แล้วได้ผลไหม"
+    - icon: "🌙"
+      name: "ยูเอล"
+      text: "...นั่นไม่ใช่ประเด็น"
 ---
 
 # 6 ลำธารดาราไร้ดาว

@@ -434,6 +434,63 @@ h2 {
   filter: saturate(0.85);
 }
 
+/* ── Aftertalk ──────────────────────────────────────── */
+
+.aftertalk {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(141, 115, 67, 0.2);
+}
+
+.aftertalk-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.aftertalk-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: #8f7440;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.aftertalk-question {
+  font-size: 0.95rem;
+  color: #a09880;
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.aftertalk-dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aftertalk-line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aftertalk-speaker {
+  font-size: 0.82rem;
+  color: #c9a85c;
+  letter-spacing: 0.05em;
+}
+
+.aftertalk-text {
+  font-size: 1rem;
+  color: #d8d4cc;
+  line-height: 1.75;
+  padding-left: 8px;
+  border-left: 2px solid rgba(141, 115, 67, 0.25);
+}
+
 /* ── Chapter nav ────────────────────────────────────── */
 
 .chapter-nav {

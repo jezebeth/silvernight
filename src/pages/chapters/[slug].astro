@@ -87,6 +87,25 @@ const base = import.meta.env.BASE_URL;
       <Content />
     </article>
 
+    {entry.data.aftertalk && (
+      <section class="aftertalk">
+        <div class="aftertalk-header">
+          <span class="ornament-line ornament-line-lg ornament-line-left"></span>
+          <span class="aftertalk-label">Aftertalk</span>
+          <span class="ornament-line ornament-line-lg ornament-line-right"></span>
+        </div>
+        <p class="aftertalk-question">Q: {entry.data.aftertalk.question}</p>
+        <div class="aftertalk-dialogue">
+          {entry.data.aftertalk.dialogue.map((line) => (
+            <div class="aftertalk-line">
+              <span class="aftertalk-speaker">{line.icon} {line.name}</span>
+              <span class="aftertalk-text">{line.text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
     <nav class="chapter-nav">
       <div>
         {prev && (
