@@ -19,6 +19,16 @@ export async function getStaticPaths() {
 const { entry, prev, next } = Astro.props;
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL;
+
+const characterIcons: Record<string, string> = {
+  'ไนท์': '🐺',
+  'ยูเอล': '🌙',
+  'ลิน': '🐰',
+  'อามิร่า': '🪽',
+  'ไอฮาล': '🕯️',
+  'ดาดัน': '💪',
+  'พิธีกร': '🎤'
+};
 ---
 
 <BaseLayout
@@ -94,15 +104,19 @@ const base = import.meta.env.BASE_URL;
           <span class="aftertalk-label">Aftertalk</span>
           <span class="ornament-line ornament-line-lg ornament-line-right"></span>
         </div>
-        <p class="aftertalk-question">Q: {entry.data.aftertalk.question}</p>
-        <div class="aftertalk-dialogue">
-          {entry.data.aftertalk.dialogue.map((line) => (
-            <div class="aftertalk-line">
-              <span class="aftertalk-speaker">{line.icon} {line.name}</span>
-              <span class="aftertalk-text">{line.text}</span>
+        {entry.data.aftertalk.map((block, i) => (
+          <div class={`aftertalk-block${i > 0 ? ' aftertalk-block-sep' : ''}`}>
+            <p class="aftertalk-question">Q: {block.question}</p>
+            <div class="aftertalk-dialogue">
+              {block.dialogue.map((line) => (
+                <div class="aftertalk-line">
+                  <span class="aftertalk-speaker">{characterIcons[line.name] ?? '◆'} {line.name}</span>
+                  <span class="aftertalk-text">{line.text}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
     )}
 

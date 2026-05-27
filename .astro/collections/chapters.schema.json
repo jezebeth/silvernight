@@ -18,6 +18,39 @@
     "illustration": {
       "type": "string"
     },
+    "aftertalk": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "dialogue": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "question",
+          "dialogue"
+        ]
+      }
+    },
     "$schema": {
       "type": "string"
     }

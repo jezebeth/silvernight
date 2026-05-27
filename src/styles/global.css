@@ -410,10 +410,10 @@ h2 {
   margin-top: 32px;
   color: #d0cec8;
   font-size: 1.06rem;
-  line-height: 2.15;
+  line-height: 1.9;
 }
 
-.chapter-content p { margin: 0 0 1.5em; }
+.chapter-content p { margin: 0 0 1em; }
 
 .chapter-content hr {
   width: 160px;
@@ -440,6 +440,7 @@ h2 {
   margin-top: 48px;
   padding-top: 32px;
   border-top: 1px solid rgba(141, 115, 67, 0.2);
+  text-align: left;
 }
 
 .aftertalk-header {
@@ -449,13 +450,24 @@ h2 {
   margin-bottom: 24px;
 }
 
+.aftertalk-header .ornament-line {
+  flex: 1;
+  width: auto;
+}
+
 .aftertalk-label {
   font-family: "Cormorant Garamond", serif;
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  color: #8f7440;
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  color: #c9a85c;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.aftertalk-block-sep {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(141, 115, 67, 0.12);
 }
 
 .aftertalk-question {

@@ -9,14 +9,13 @@ const chapters = defineCollection({
     description: z.string().optional(),
     publishedAt: z.coerce.date(),
     illustration: z.string().optional(),
-    aftertalk: z.object({
+    aftertalk: z.array(z.object({
       question: z.string(),
       dialogue: z.array(z.object({
-        icon: z.string(),
         name: z.string(),
         text: z.string(),
       })),
-    }).optional(),
+    })).optional(),
   }),
 });
 
