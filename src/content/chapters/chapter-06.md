@@ -3,7 +3,7 @@ title: "บทที่ 6: ลำธารดาราไร้ดาว"
 chapter: 6
 publishedAt: 2026-05-14
 description: "แอสเทรียคือเมืองที่เคยมีลำธารสะท้อนแสงดาว แต่คืนนี้ท้องฟ้ากลับมืดสนิท"
-illustration: "/silvernight/images/silvernight/chapter-06-cover.png"
+illustration: "/images/silvernight/chapter-06-cover.png"
 aftertalk:
   - question: "ทั้งคู่รู้สึกยังไงที่ถูกมองเป็นคนรักกัน?"
     dialogue:
@@ -26,8 +26,6 @@ aftertalk:
       - name: "ยูเอล"
         text: "...นั่นไม่ใช่ประเด็น"
 ---
-
-# 6 ลำธารดาราไร้ดาว
 
 ไนท์และยูเอลเดินผ่านลำธารที่ตัดผ่านเมืองแอสเทรีย แยกเมืองออกเป็นสองฝั่งชัดเจน พวกเขามองหาโรงแรมที่ไม่ได้อยู่ห่างจากบ้านเรือนมากนัก แต่ก็ไม่ได้พลุกพล่าน
 
@@ -85,6 +83,8 @@ aftertalk:
 
 ‘หมายถึงฉันเหรอ…?’
 
+![เจ้าหญิง](/silvernight/images/silvernight/chapter-06-princess.png)
+
 ไนท์เดินไปอยู่ด้านหลังยูเอลแล้วกระซิบเบาๆ ที่ข้างหู
 
 “อย่าเพิ่งพูดอะไร ตามน้ำไปก่อน”
@@ -126,8 +126,6 @@ aftertalk:
 “นายคิดอะไรอยู่กันแน่”
 
 “เดี๋ยวคืนนี้นายก็รู้”
-
-![เจ้าหญิง](/silvernight/images/silvernight/chapter-06-princess.png)
 
 ---
 

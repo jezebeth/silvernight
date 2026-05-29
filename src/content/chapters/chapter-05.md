@@ -3,7 +3,7 @@ title: "บทที่ 5: ทางแยก"
 chapter: 5
 publishedAt: 2026-05-02
 description: "เมื่อเป้าหมายข้างหน้าเริ่มไม่ชัดเจน และความหวาดระแวงยังคงคั่นกลาง"
-illustration: "/silvernight/images/silvernight/chapter-05-cover.png"
+illustration: "/images/silvernight/chapter-05-cover.png"
 aftertalk:
   - question: "ยูเอลคะ ตอนถูกผูกข้อมือไว้กับเสา โกรธไหมคะ?"
     dialogue:

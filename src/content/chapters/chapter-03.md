@@ -3,7 +3,7 @@ title: "บทที่ 3: ประตูแห่งความฝัน"
 chapter: 3
 publishedAt: 2026-05-02
 description: "การไล่ล่าพาไนท์เข้าไปสู่สถานที่ที่ไม่ควรมีอยู่ในโลกความจริง ที่ซึ่งความฝัน ความมืด และศัตรูที่มองไม่เห็นเริ่มเผยรูปร่างของมัน"
-illustration: "/silvernight/images/silvernight/chapter-03-cover.png"
+illustration: "/images/silvernight/chapter-03-cover.png"
 aftertalk:
     - question: "ไนท์คะ ทำไมถึงเลือกโรงแรมที่มองเห็นประตูเมืองพอดีคะ"
       dialogue:

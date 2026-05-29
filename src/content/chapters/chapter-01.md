@@ -4,7 +4,7 @@ chapter: 1
 slug: "chapter-01"
 description: "คืนหนึ่งที่ควรเงียบสงบในหมู่บ้านเกลซ กลับกลายเป็นจุดเริ่มต้นของความมืดที่ไม่มีใครเข้าใจ และทำให้ไนท์ต้องออกตามหาเงื่อนงำเดียวที่หลงเหลืออยู่"
 publishedAt: "2026-05-02"
-illustration: "/silvernight/images/silvernight/chapter-06-forest.png"
+illustration: "/images/silvernight/chapter-06-forest.png"
 ---
 
 ป่าบนเทือกเขาที่ทอดเป็นแนวยาวพาดผ่านหมู่บ้านเกลซเป็นสถานที่ประจำของไนท์ที่จะขึ้นมาล่าสัตว์สัปดาห์ละสองถึงสามครั้ง

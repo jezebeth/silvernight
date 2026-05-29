@@ -3,7 +3,7 @@ title: "บทที่ 2: สฟอล"
 chapter: 2
 publishedAt: 2026-05-02
 description: "ไนท์เดินทางถึงเมืองสฟอลเพื่อตามหาเบาะแสของเอเธอริส"
-illustration: "/silvernight/images/silvernight/chapter-02-cover.png"
+illustration: "/images/silvernight/chapter-02-cover.png"
 aftertalk:
   - question: "ไนท์คะ ตอนโดนล้อมในตรอก รู้สึกกลัวบ้างไหมคะ?"
     dialogue:

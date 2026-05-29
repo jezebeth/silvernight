@@ -3,7 +3,7 @@ title: "บทที่ 4: มุ่งขึ้นเหนือ"
 chapter: 4
 publishedAt: 2026-05-02
 description: "ไนท์กับยูเอลจำต้องเดินทางร่วมกัน แม้ความไว้ใจยังไม่เกิดขึ้น ระหว่างทางพวกเขาเริ่มเห็นร่องรอยของภัยที่กำลังลุกลามไปไกลกว่าที่คิด"
-illustration: "/silvernight/images/silvernight/chapter-04-cover.png"
+illustration: "/images/silvernight/chapter-04-cover.png"
 aftertalk:
     - question: "ไนท์คะ ตอนบอกว่าผมยูเอลเด่นเกิน จริงๆ กลัวคนอื่นเห็น หรือกลัวตัวเองมองมากไปคะ"
       dialogue:
